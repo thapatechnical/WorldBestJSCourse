@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <h1>JS Window Obj</h1>
+
+    <!--? ========== Start Window Property ========== -->
+
+    <button
+      onclick="window.open('https://thapatechnical.shop/courses', '_blank')"
+    >
+      Navigate
+    </button>
+    <!--? ========== End Window Property ========== -->
+
+    <!--? ========== Start History ========== -->
+    <h1>JavaScript History Object</h1>
+    <button onclick="history.back()">Go Back</button>
+    <button onclick="history.forward()">Go Forward</button>
+    <button onclick="history.go(-1)">Move Backward or forward</button>
+    <!--? ========== End History ========== -->
+
+    <!--? ========== Start Location ========== -->
+    <h1>JavaScript Location Object</h1>
+    <button onclick="location.reload()">Reload the Page</button>
+    <button
+      onclick="window.location.replace('https://www.thapatechnical.com/')"
+    >
+      Navigate Page using replace
+    </button>
+    <!--* Purpose: Assigns a new URL to the current window, effectively navigating to a new page. -->
+    <button onclick="location.assign('https://kodyfier.com/')">
+      Navigate Page with Assign
+    </button>
+    <!--? ========== End Location ========== -->
+
+    <!--? ========== Start Screen ========== -->
+    <h1>JavaScript Screen Object</h1>
+    <p>We will see in console.</p>
+    <!--? ========== End Screen ========== -->
+
+    <script>
+      window.alert("welcome to the js course ");
+    </script>
+  </body>
+</html>
