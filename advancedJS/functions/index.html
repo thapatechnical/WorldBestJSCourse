@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const apiUrl = "https://jsonplaceholder.typicode.com/posts/1";
+
+      function fetchData() {
+        const response = fetch(apiUrl)
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            return data;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        return response;
+      }
+
+      fetchData();
+    </script>
+  </body>
+</html>

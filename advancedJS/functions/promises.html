@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Dad Jokes!</h1>
+      <section class="api_body"></section>
+      <button id="fetchJoke">Get Another Joke</button>
+    </div>
+
+    <script>
+      const apiBody = document.querySelector(".api_body");
+      // const apiUrl = "https://jsonplaceholder.typicode.com/posts/1";
+      const apiUrl = "https://icanhazdadjoke.cosm/";
+
+      const fetchData = () => {
+        fetch(apiUrl, {
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((res) => {
+            console.log(res);
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data.joke);
+            apiBody.innerHTML = data.joke;
+          })
+          .catch((error) => {
+            apiBody.innerHTML = `Api is not working`;
+            console.log("I am sorry");
+          });
+      };
+
+      fetchData();
+
+      // Add event listener to fetch a new joke when the button is clicked
+      document.getElementById("fetchJoke").addEventListener("click", fetchData);
+    </script>
+  </body>
+</html>

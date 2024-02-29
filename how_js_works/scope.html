@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = "thapa technical";
+
+      function outerFunction() {
+        let outerVar = " from outerFunction";
+
+        function innerFunction() {
+          var innerVar = " from innerFunction"; // global variable too
+          let innerBlockVar = "block -  from InnerFunction too";
+
+          console.log(
+            `My name is ${name}, I am  calling ${outerVar}, also ${innerVar} & from  ${innerBlockVar}`
+          ); // Access outerVar from the outer scope
+        }
+
+        console.log(`My name is ${name}, I am  calling ${outerVar} `); // will work
+
+        console.log(
+          `My name is ${name}, I am  calling ${outerVar} also ${innerVar}`
+        ); // will not work
+
+        console.log(`${outerVar}, ${innerVar} , ${innerBlockVar}`); // will not work
+        innerFunction();
+      }
+
+      outerFunction();
+    </script>
+  </body>
+</html>
+
+<!-- the var keyword does not create variables with global scope by default when declared inside a function. Variables declared with var have function scope, meaning they are accessible only within the function in which they are declared. -->
